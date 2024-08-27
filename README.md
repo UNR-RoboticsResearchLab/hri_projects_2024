@@ -38,9 +38,9 @@ To start we need to create a directory:
 
 ```
 cd ~
-mkdir -p hri2023/src
-cd ~/hri2023/src
-cd ~/hri2023
+mkdir -p hri2024/src
+cd ~/hri2024/src
+cd ~/hri2024
 catkin_make
 ```
 
@@ -55,7 +55,7 @@ ls
 You'll see there's now a build and devel directory. Let's concentrate on devel for now. if you look in that directory you'll see a lot of setup files, these help ROS find the developed files in this workspace. Let's use one of them:
 
 ```
-source ~/hri2023/devel/setup.bash
+source ~/hri2024/devel/setup.bash
 ```
 
 This will install the packages for a base ROS distribution. Just for funzies, let's take a look at what that setup.bash file changed:
@@ -69,13 +69,13 @@ ROS_PACKAGE_PATH= now points to your workspace directory (along with the default
 
 ## fork and clone repository
 
-First, navigate to the hri_projects_2023 page: https://github.com/UNR-RoboticsResearchLab/hri_projects_2023
+First, navigate to the hri_projects_2024 page: https://github.com/UNR-RoboticsResearchLab/hri_projects_2024
 
 You should create a version under your github id. Then clone your repository:
 
 ```
-cd ~/hri2023/src
-git clone https://github.com/<YOUR GITHUB ID HERE>/hri_projects_2023
+cd ~/hri2024/src
+git clone https://github.com/<YOUR GITHUB ID HERE>/hri_projects_2024
 ```
 
 this will clone the repo into your ROS package source directory.
@@ -83,7 +83,7 @@ this will clone the repo into your ROS package source directory.
 Next we want to test the compile of the system:
 
 ```
-cd ~/hri2023
+cd ~/hri2024
 catkin_make
 ```
 
@@ -93,13 +93,13 @@ assuming all goes well, then you should be able to get to the week 0 package usi
 roscd week0
 ```
 
-if you've gotten to the directory: ~/hri2023/src/hri_projects_2023/week0
+if you've gotten to the directory: ~/hri2024/src/hri_projects_2024/week0
 
 ## Navigate to the week 0 project readme
 
 Each project week will have a readme file with instructions for the week, navigate to the week1 directory on github to see the instruction for the week.
 
-If you get lost, the direct link is: https://github.com/UNR-RoboticsResearchLab/hri_projects_2023/tree/main/week0
+If you get lost, the direct link is: https://github.com/UNR-RoboticsResearchLab/hri_projects_2024/tree/main/week0
 
 ## committing a change to your repository
 
