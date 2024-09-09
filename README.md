@@ -95,6 +95,16 @@ roscd week0
 
 if you've gotten to the directory: ~/hri2024/src/hri_projects_2024/week0
 
+## Using this overlay in a new terminal
+
+What we've done up to this point is create a workspace as an overlay over the default ROS package distribution. In order to see these packages, you need to source *this* command in each new terminal:
+
+```
+source ~/hri2024/devel/setup.bash
+```
+
+You can also add this line to the end of your .bashrc file to make this automatically load.
+
 ## Navigate to the week 0 project readme
 
 Each project week will have a readme file with instructions for the week, navigate to the week1 directory on github to see the instruction for the week.
