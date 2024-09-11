@@ -139,11 +139,49 @@ Publishers:
 Subscribers: 
  * /listener_20481_1726031939813 (http://metatron:32785/)
 
-''
+'
 Dave will talk a little bit again...
+
+finally, let's see what's being sent on that topic:
+
+```
+rostopic echo /chatter
+```
+
+try that on other topics as well
 
 ### roswtf
 
 This stands for ROS, what the face (or something)
 
-try typing `roswtf` on the command-line, you'll get a check 
+try typing `roswtf` on the command-line, you'll get a check of the status of any nodes that are running, which can be useful
+
+## Starting up our humanoid 'simulation'
+
+- Rather than running a full nao simulator, we're going to just play with a model nao in rviz. Let's start with loading a description of the nao into ROS:
+
+```
+roslaunch week2 nao_sim.launch
+```
+
+- In another terminal, start up an instance of `rviz`, add a RobotModel.
+
+```
+rosrun rviz rviz
+```
+
+- Finally in a third terminal, let's run a gui publisher:
+
+```
+rosrun joint_state_publisher_gui joint_state_publisher_gui
+```
+
+This will load up a gui that can move each joint individually. If you want to see what the gui is publishing, you can use rostopic echo to see:
+
+```
+rostopic echo /joint_states
+```
+
+## Keyframe animation with the Nao
+
+next week, we're going to play around with how to move the nao in simulation using ROS, for today, look at how the joints move the nao
