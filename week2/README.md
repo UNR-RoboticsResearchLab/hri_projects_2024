@@ -42,7 +42,11 @@ in the second terminal, run the talker node:
 rosrun week0 talker
 ```
 
-let that guy run, it'll do its job. But let's see what info we can learn in our third terminal. Let's start with the rosnode command:
+let that guy run, it'll do its job. But let's see what info we can learn in our third terminal.
+
+### rosnode
+
+Let's start with the rosnode command:
 
 ```
 rosnode list
@@ -51,6 +55,7 @@ rosnode list
 you should see two nodes running, something like:
 
 /rosout
+
 /talker_17741_1726030205396
 
 you can then use the same command to get info about a node if you want:
@@ -81,3 +86,64 @@ Connections:
     * to: /rosout
     * direction: outbound (32769 - 127.0.0.1:42130) [9]
     * transport: TCPROS
+
+
+Dave's going to talk about the info here for a bit...
+
+Let's show another cool tool!
+
+### rostopic
+
+In that third terminal, let's use another command:
+
+```
+rostopic list
+```
+
+That'll show a list of all the topics currently running:
+
+/chatter
+
+/rosout
+
+/rosout_agg
+
+
+```
+rostopic info /chatter
+```
+
+that'll give us some info like this:
+
+Type: std_msgs/String
+
+Publishers: 
+ * /talker_17741_1726030205396 (http://metatron:43323/)
+
+Subscribers: None
+
+
+Let's do one more thing, open up a fourth terminal, and do this:
+
+```
+rosrun week0 listener
+```
+
+and re-run the `rostopic info /chatter` command again, you should see something like this:
+
+'Type: std_msgs/String
+
+Publishers: 
+ * /talker_17741_1726030205396 (http://metatron:43323/)
+
+Subscribers: 
+ * /listener_20481_1726031939813 (http://metatron:32785/)
+
+''
+Dave will talk a little bit again...
+
+### roswtf
+
+This stands for ROS, what the face (or something)
+
+try typing `roswtf` on the command-line, you'll get a check 
