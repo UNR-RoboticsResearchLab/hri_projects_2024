@@ -35,7 +35,6 @@ Let's check out how this works!
 `rosmsg show sensor_msgs/JointState` should show the message type for the message we'll be using:
 
 ```
-sensor_msgs/JointState 
 std_msgs/Header header
   uint32 seq
   time stamp
@@ -44,4 +43,41 @@ string[] name
 float64[] position
 float64[] velocity
 float64[] effort
+```
+
+We can ignore the `velocity` and `effort` fields for now. Let's start with:
+
+```
+std_msgs/Header header
+  uint32 seq
+  time stamp
+  string frame_id
+```
+
+This is a header, a message made up of more messages. The header has three parts (helfully indented for easy reading). The 'seq' field helps order messages, the `stamp` field is the ROSTIME, an the 'frame_id' field, says what frame of reference these are in. Let's set the time and the frame.
+
+Next let's look at the two fields relevant for our work this week:
+
+```
+string[] name
+float64[] position
+```
+
+These are both lists (hence the '[]' at the end of the type). These lists should be equal length, the name is the name of the joint to set, and the position is what position (in radians) to set it to.
+
+We can set those joint names and positions as follows:
+
+```
+        # put in some joints that we'll edit
+        js.name.append("HeadYaw")
+        js.name.append("HeadPitch")
+
+        js.position.append(math.radians(angle))
+        js.position.append(0)
+```
+
+*** Note: this doesn't actually change the joints!! That doesn't happen until we send the message:
+
+```
+        pub.publish(joint_states)
 ```
