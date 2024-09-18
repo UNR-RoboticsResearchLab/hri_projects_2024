@@ -63,7 +63,7 @@ string[] name
 float64[] position
 ```
 
-These are both lists (hence the '[]' at the end of the type). These lists should be equal length, the name is the name of the joint to set, and the position is what position (in radians) to set it to.
+These are both lists (hence the '[]' at the end of the type). These lists should be equal length, the 'name' is the name of the joint to set, and the 'position' is what position (in radians) to set it to.
 
 We can set those joint names and positions as follows:
 
@@ -81,3 +81,17 @@ We can set those joint names and positions as follows:
 ```
         pub.publish(joint_states)
 ```
+
+## What to complete for this week
+
+Let's start moving joints:
+
+* Add a complete list of joints to the joint_states message
+* Edit my script to work as a sequence of actions, rather than a loop
+** make sure to have delays between changes of position
+* Create a simple animation with a set of poses
+** wave hi
+** nod head
+** shake head
+* Reach: make interpolated actions, rather than just setting individual frames
+
