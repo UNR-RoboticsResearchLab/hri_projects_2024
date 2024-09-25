@@ -47,3 +47,18 @@ if __name__ == '__main__':
 4. Write a final node that look in the direction that the hand is pointing
 
 The above, plus the week3 deliverables will consitute our first larger project, due Oct 04, 2024.
+
+## some techniques to discuss
+
+If you try setting a joint angle for just the head angles, then only the head will show up. However, if you use the `joint_state_publisher_gui` then it might either flicker or one might just overrule the other.
+
+you can see how this happens by looking at rqt_graph (`rosrun rqt_graph rqt_graph`). You might see something like this:
+
+(add pic here)
+
+How can we fix this? One easy way is to make our node setting the position of the head just serve as a node that adjusts the existing message put out by joint_state_publisher_gui
+
+This is a good time to show how to write a node that both reads and writes a message:
+
+### adjust our node to read a message
+

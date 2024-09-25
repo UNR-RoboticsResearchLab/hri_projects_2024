@@ -1,0 +1,12 @@
+<launch>
+
+	<!-- complete robot model with base_footprint -->
+	<node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_commander" />
+
+	<!-- additionally load the robot state publisher -->
+	<node pkg="week4" type="tf_look_at_hand.py" name="look_at_hand" />
+
+	<!-- add the joint mover -->
+	<!--<node pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="nao_mover"/>-->
+
+</launch>
