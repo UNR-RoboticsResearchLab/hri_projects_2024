@@ -1,4 +1,4 @@
-# Week 3 Tutorial
+# Week 4 Tutorial
 
 This week we're going to continue moving the 'simulation' of the Nao robot but now add a new library (TF2) that will help us move the robot pretty intelligently.
 
@@ -54,9 +54,9 @@ If you try setting a joint angle for just the head angles, then only the head wi
 
 you can see how this happens by looking at rqt_graph (`rosrun rqt_graph rqt_graph`). You might see something like this:
 
-(add pic here)
+![visualization of the joint_states issue](https://github.com/davefeilseifer/hri_projects_2024/blob/main/week4/imgs/multiple_joint_state.png)
 
-How can we fix this? One easy way is to make our node setting the position of the head just serve as a node that adjusts the existing message put out by joint_state_publisher_gui
+You can see in the above image that `robot_state_publisher` is getting joint_states input from two different nodes, hence the flicker. It's getting conflicting information. Let's send one consistent message. How can we fix this? One easy way is to make our node setting the position of the head just serve as a node that adjusts the existing message put out by joint_state_publisher_gui
 
 This is a good time to show how to write a node that both reads and writes a message:
 
