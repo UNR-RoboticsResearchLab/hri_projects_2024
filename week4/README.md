@@ -62,3 +62,13 @@ This is a good time to show how to write a node that both reads and writes a mes
 
 ### adjust our node to read a message
 
+1. look at how the listener node (week0) does to read a message, adjust our node to read a joint_states message (use a different topic than `joint_states`, like `joint_state_input`)
+2. have our node just the read joint_states message and use that message (editing the fields for head yaw and head pitch) based on our joint angles
+3. adjust the `joint_state_publisher_gui` to publish to the input topic above (you can do this in the launch file)
+4. profit!
+
+for more information on remapping topics in launch files, check out this article: http://wiki.ros.org/roslaunch/XML/remap
+
+when it works, it should look like this:
+
+![visualization of the joint_states fix](https://github.com/davefeilseifer/hri_projects_2024/blob/main/week4/imgs/fixed_joint_state.png)
