@@ -88,10 +88,10 @@ Let's start moving joints:
 
 * Add a complete list of joints to the joint_states message
 * Edit my script to work as a sequence of actions, rather than a loop
-** make sure to have delays between changes of position
+* * make sure to have delays between changes of position
 * Create a simple animation with a set of poses
-** wave hi
-** nod head
-** shake head
+* * wave hi
+* * nod head
+* * shake head
 * Reach: make interpolated actions, rather than just setting individual frames
 
