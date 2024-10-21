@@ -12,7 +12,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   stage_ros
   std_msgs
-  week1
+  week0
 )
 
 ## System dependencies are found with CMake's conventions
