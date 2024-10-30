@@ -67,8 +67,5 @@ Now look back at your obstacle avoidance node from week7. Re-write this node to 
 
 Read through the tuturials on rosbag: http://wiki.ros.org/rosbag
 
-While we won't have a specific turn-in this week, next week's programming exercises will use this.
+While we won't have a specific turn-in this week, a future week's programming exercises will use this.
 
-## Using a rosbag recording
-
-Dave's going to record a rosbag with some laser-based people detection on a real robot, you'll view it using `rosbag play` and rviz.
