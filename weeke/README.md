@@ -15,7 +15,7 @@ catkin_make
 
 Now you want to follow the instructions on the project's README page: https://github.com/alphacep/ros-vosk
 
-Now we're going to go back to our weekA directory to develop our nodes.
+Now we're going to go back to our weeke directory to develop our nodes.
 
 ## Speech Recognition
 
@@ -32,5 +32,8 @@ Listen to each of the topics published by the `speech_recognition` node and how 
 Vosk comes with a *very* basic speech generator node. You can publish strings to the `tts/phrase` topic to speak them.
 
 * Write a node to listen for speech and then repeat that speech back
-* Write a node that listens for speech commands from a user and then moves the robot (use actions from weeks 7 and 8) in response
-* Write a node that asks some yes/no questions, waits for a speech response from a user, then changes its response based on the answers to those questions
+* Write a node that listens for speech commands from a user and responds (use gestures from project[0]):
+** When a user says 'Hi' or 'Hello', the robot should wave
+** When a user says 'yes' or 'no', the robot should nod or shake its head
+
+* Write a node that listens for a string, then speaks that string using text to speech. If the string includes 'hello' then the user should wave, nod or shake for yes or no as well, when the speech engine gets to that word.
