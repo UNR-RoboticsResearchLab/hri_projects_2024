@@ -8,6 +8,7 @@ We're going to install a package called ros_vosk that's pretty useful for this:
 
 ```
 cd ~/hri2024/src
+sudo apt install python3-tk python3-bs4
 git clone git@github.com:alphacep/ros-vosk.git
 cd ..
 catkin_make
